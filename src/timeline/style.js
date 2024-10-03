@@ -33,26 +33,33 @@ export default function styleConstructor(theme = {}, calendarHeight) {
             height: '105%'
         },
         nowIndicator: {
-            position: 'absolute',
-            right: 0
+          position: 'absolute',
+          right: 0
         },
         nowIndicatorLine: {
-            height: 1,
-            backgroundColor: NOW_INDICATOR_COLOR,
-            ...appStyle.nowIndicatorLine,
-            position: 'absolute',
-            left: 0,
-            right: 0
+          height: 1,
+          backgroundColor: NOW_INDICATOR_COLOR,
+          ...appStyle.nowIndicatorLine,
+          position: 'absolute',
+          left: 0,
+          right: 0
         },
         nowIndicatorKnob: {
-            width: 7,
-            height: 7,
-            borderRadius: 4,
-            backgroundColor: NOW_INDICATOR_COLOR,
-            ...appStyle.nowIndicatorKnob,
-            position: 'absolute',
-            left: -3,
-            top: -3
+          width: 60,
+          height: 30,
+          borderRadius: 15,
+          backgroundColor: NOW_INDICATOR_COLOR,
+          ...appStyle.nowIndicatorKnob,
+          position: 'absolute',
+          left: -30,
+          top: -15,
+          justifyContent: 'center',
+          alignItems: 'center'
+        },
+        nowIndicatorTime: {
+          color: 'white',
+          fontSize: 12,
+          fontWeight: 'bold'
         },
         timeLabel: {
             color: TIME_LABEL_COLOR,
