@@ -45,14 +45,15 @@ export default function styleConstructor(theme = {}, calendarHeight) {
           right: 0
         },
         nowIndicatorKnob: {
-          width: 60,
+          ...appStyle.nowIndicatorKnob,
+          width: 150,
           height: 30,
           borderRadius: 15,
           backgroundColor: NOW_INDICATOR_COLOR,
           ...appStyle.nowIndicatorKnob,
           position: 'absolute',
-          left: -30,
-          top: -15,
+          left: 0,
+          top: 0,
           justifyContent: 'center',
           alignItems: 'center'
         },

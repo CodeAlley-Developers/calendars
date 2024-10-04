@@ -7,9 +7,9 @@ const NowIndicator = (props) => {
   const { styles, width, left } = props;
   const indicatorPosition = calcTimeOffset(HOUR_BLOCK_HEIGHT);
 
-  const nowIndicatorStyle = useMemo(() => {
+const nowIndicatorStyle = useMemo(() => {
     return [styles.nowIndicator, { top: indicatorPosition, left }];
-  }, [indicatorPosition, left, styles.nowIndicator]);
+  }, [indicatorPosition, left, styles.nowIndicator, styles.nowIndicatorKnob]); // Added styles.nowIndicatorKnob
 
   const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
