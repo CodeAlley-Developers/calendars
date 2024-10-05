@@ -141,7 +141,7 @@ export default function styleConstructor(theme = {}) {
             flexDirection: appStyle.todayButtonPosition === 'right' ? 'row-reverse' : 'row',
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: 'white',
+            backgroundColor: '#81CEA4',
             ...Platform.select({
                 ios: {
                     shadowColor: '#79838A',
@@ -155,13 +155,13 @@ export default function styleConstructor(theme = {}) {
             })
         },
         todayButtonText: {
-            color: appStyle.todayButtonTextColor,
+            color: '#F3F5F7',
             fontSize: constants.isTablet ? appStyle.todayButtonFontSize + 2 : appStyle.todayButtonFontSize,
             fontWeight: appStyle.todayButtonFontWeight,
             fontFamily: appStyle.todayButtonFontFamily
         },
         todayButtonImage: {
-            tintColor: appStyle.todayButtonTextColor,
+            tintColor: '#F3F5F7',
             marginLeft: appStyle.todayButtonPosition === 'right' ? 7 : undefined,
             marginRight: appStyle.todayButtonPosition === 'right' ? undefined : 7
         },

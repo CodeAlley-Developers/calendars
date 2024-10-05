@@ -9,13 +9,15 @@ const NowIndicator = (props) => {
 
 const nowIndicatorStyle = useMemo(() => {
     return [styles.nowIndicator, { top: indicatorPosition, left }];
-  }, [indicatorPosition, left, styles.nowIndicator, styles.nowIndicatorKnob]); // Added styles.nowIndicatorKnob
+  }, [indicatorPosition, left, styles.nowIndicator]);
 
-  const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit',hour12: false });
 
   return (
     <View style={nowIndicatorStyle}>
-      <View style={[styles.nowIndicatorLine, { width }]} />
+      <View style={[styles.nowIndicatorLine, ]}  />
+      <View style={styles.nowIndicatorDot}></View>
+      <View style={styles.connectingLine} />
       <View style={styles.nowIndicatorKnob}>
         <Text style={styles.nowIndicatorTime}>{currentTime}</Text>
       </View>

@@ -20,11 +20,16 @@ export default function styleConstructor(theme = {}, calendarHeight) {
             height: calendarHeight + 10
         },
         line: {
-            height: 1,
-            backgroundColor: LINE_COLOR,
             ...theme.line,
             position: 'absolute'
         },
+        gradientBorder: {
+            position: 'absolute',
+            top: 0,
+            bottom: 0,
+            right: 0,
+            width: 2,
+          },
         verticalLine: {
             width: 1,
             backgroundColor: LINE_COLOR,
@@ -41,24 +46,39 @@ export default function styleConstructor(theme = {}, calendarHeight) {
           backgroundColor: NOW_INDICATOR_COLOR,
           ...appStyle.nowIndicatorLine,
           position: 'absolute',
-          left: 0,
+          left: -50,
           right: 0
         },
+        connectingLine: {
+            position: 'absolute',
+            left: 0,
+            width: 1,
+            top: 3,
+            bottom: 0,
+            backgroundColor: 'pink',
+          },
+        nowIndicatorDot: {
+            height:8,
+            width:8,
+            backgroundColor: '#FB2EC7',
+            borderRadius:4,
+            top:-3,
+            right:50,
+        },
         nowIndicatorKnob: {
-          ...appStyle.nowIndicatorKnob,
-          width: 150,
+          width: 60,
           height: 30,
           borderRadius: 15,
-          backgroundColor: NOW_INDICATOR_COLOR,
+          backgroundColor: '#FB2EC7',
           ...appStyle.nowIndicatorKnob,
           position: 'absolute',
-          left: 0,
-          top: 0,
+          left: -30,
+          top: -15,
           justifyContent: 'center',
           alignItems: 'center'
         },
         nowIndicatorTime: {
-          color: 'white',
+          color: '#F3F5F7',
           fontSize: 12,
           fontWeight: 'bold'
         },

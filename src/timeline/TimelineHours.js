@@ -5,6 +5,7 @@ import { View, Text, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 import constants from '../commons/constants';
 import { buildTimeString, calcTimeByPosition, calcDateByPosition } from './helpers/presenter';
 import { buildUnavailableHoursBlocks, HOUR_BLOCK_HEIGHT } from './Packer';
+import { LinearGradient } from 'expo-linear-gradient';
 const dimensionWidth = constants.screenWidth;
 const EVENT_DIFF = 20;
 const TimelineHours = (props) => {
@@ -67,8 +68,41 @@ const TimelineHours = (props) => {
             <Text key={`timeLabel${time}`} style={[styles.timeLabel, { top: offset * index - 6, width: timelineLeftInset - 16 }]}>
               {timeText}
             </Text>
-            {time === start ? null : (<View key={`line${time}`} testID={`${testID}.${time}.line`} style={[styles.line, { top: offset * index, width: dimensionWidth - EVENT_DIFF, left: timelineLeftInset - 16 }]}/>)}
-            {<View key={`lineHalf${time}`} testID={`${testID}.${time}.lineHalf`} style={[styles.line, { top: offset * (index + 0.5), width: dimensionWidth - EVENT_DIFF, left: timelineLeftInset - 16 }]}/>}
+            {time === start ? null : (<LinearGradient
+          key={`line${time}`}
+          testID={`${testID}.${time}.line`}
+          colors={['rgba(0,0,0,0)', 'rgb(185,200,202)', 'rgba(0,0,0,0)']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={[
+            styles.line,
+            {
+              top: offset * index,
+              width: dimensionWidth - EVENT_DIFF,
+              left: timelineLeftInset - 16,
+              height: 1, // Ensure the line has a height
+            }
+          ]}
+        />)}
+            {
+
+    //     <LinearGradient
+    //     key={`lineHalf${time}`}
+    //     testID={`${testID}.${time}.lineHalf`}
+    //     colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.5)', 'rgba(0,0,0,0)']}
+    //     start={{ x: 0, y: 0 }}
+    //     end={{ x: 1, y: 0 }}
+    //     style={[
+    //       styles.line,
+    //       {
+    //         top: offset * (index + 0.5),
+    //         width: dimensionWidth - EVENT_DIFF,
+    //         left: timelineLeftInset - 16,
+    //         height: 1, // Ensure the line has a height
+    //       }
+    //     ]}
+    //   />
+      }
           </React.Fragment>);
         })}
       {times(numberOfDays, (index) => <View key={index} style={[styles.verticalLine, { right: (index + 1) * width / numberOfDays }]}/>)}
