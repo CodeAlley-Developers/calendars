@@ -72,14 +72,14 @@ export default function styleConstructor(theme = {}, calendarHeight) {
           backgroundColor: '#FB2EC7',
           ...appStyle.nowIndicatorKnob,
           position: 'absolute',
-          left: -30,
+          left: -10,
           top: -15,
           justifyContent: 'center',
           alignItems: 'center'
         },
         nowIndicatorTime: {
           color: '#F3F5F7',
-          fontSize: 12,
+          fontSize: 16,
           fontWeight: 'bold'
         },
         timeLabel: {

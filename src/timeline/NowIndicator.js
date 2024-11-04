@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { View, Text } from 'react-native';
 import { calcTimeOffset } from './helpers/presenter';
 import { HOUR_BLOCK_HEIGHT } from './Packer';
+import CustomText from './CustomText';
 
 const NowIndicator = (props) => {
   const { styles, width, left } = props;
@@ -19,7 +20,7 @@ const nowIndicatorStyle = useMemo(() => {
       <View style={styles.nowIndicatorDot}></View>
       <View style={styles.connectingLine} />
       <View style={styles.nowIndicatorKnob}>
-        <Text style={styles.nowIndicatorTime}>{currentTime}</Text>
+        <CustomText style={styles.nowIndicatorTime}>{currentTime}</CustomText>
       </View>
     </View>
   );

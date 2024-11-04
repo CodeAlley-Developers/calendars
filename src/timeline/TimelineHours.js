@@ -65,7 +65,7 @@ const TimelineHours = (props) => {
 
       {hours.map(({ timeText, time }, index) => {
             return (<React.Fragment key={time}>
-            <Text key={`timeLabel${time}`} style={[styles.timeLabel, { top: offset * index - 6, width: timelineLeftInset - 16 }]}>
+            <Text key={`timeLabel${time}`} style={[styles.timeLabel, { top: offset * index - 20, width: timelineLeftInset - 16 }]}>
               {timeText}
             </Text>
             {time === start ? null : (<LinearGradient
@@ -79,6 +79,7 @@ const TimelineHours = (props) => {
             {
               top: offset * index,
               width: dimensionWidth - EVENT_DIFF,
+              marginTop: 0,
               left: timelineLeftInset - 16,
               height: 1, // Ensure the line has a height
             }
